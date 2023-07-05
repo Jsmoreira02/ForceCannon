@@ -1,13 +1,5 @@
 <h2 align="center">Hello, Friend 👋! My name is S3R0N... and I'm a Ethical Hacker, CTF Player and Computer Science student..., currently developing cybersecurity and automation tools, also working with Bug Bounty....</h2>
 
-###
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=JoaoPedroMoreira02&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
-</div>
-
-###
-
 <br clear="both">
 
 <h2 align="center">Programming Languages | Scripts</h2>
