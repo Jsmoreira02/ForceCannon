@@ -29,7 +29,7 @@ Usage: ./app.rb [-t/--target] [-u/--username] [-P/--Password_list]
 
 ## How it works (Detailed)
 
-The script works with the `name` attribute of the element contained within the `<form>` tag. The user will use this to enter the `username` and `password` values and submit the data request for authentication.
+The script works with the `name` attribute of the HTML element contained within the `<form>` tag. The user will use this to enter the `username` and `password` values and submit the data request for authentication.
 
 Using a good wordlist (dictionary) of possible passwords or usernames, the script will continuously insert in the username or password attribute with the items in the list until it finds the right match and the authentication request is approved
 
