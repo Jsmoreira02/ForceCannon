@@ -31,9 +31,9 @@ Usage: ./app.rb [-t/--target] [-u/--username] [-P/--Password_list]
 
 The script works with the `name` attribute of the HTML element contained within the `<form>` tag. The user will use this to enter the `username` and `password` values and submit the data request for authentication.
 
-Using a good wordlist (dictionary) of possible passwords or usernames, the script will continuously insert in the username or password attribute with the items in the list until it finds the right match and the authentication request is approved
+Using a good wordlist (dictionary) of possible passwords or usernames, the script will continuously insert in the username or password attribute with the items in the list until it finds the right match and the authentication request is approved.
 
-For this to occur correctly, the user must enter the identifier(value) of the `name` attribute of the username and password field in the program, and the target URL must contain the value of the `action` attribute of the `<form>` tag, which tells where to send the form-data when the form is submitted
+For this to occur correctly, the user must enter the identifier(value) of the `name` attribute of the username and password field in the program, and the target URL must contain the value of the `action` attribute of the `<form>` tag, which tells where to send the form-data when the form is submitted and insert the `error message` that the application returns when the credentials are incorrect, so that it is given as success if the error message is no longer in the body of the page after the request.
 
 ```bash
 <form action="/action_page.php" method="get">
