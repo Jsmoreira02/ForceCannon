@@ -6,7 +6,7 @@ This is a script made in ruby to attack login forms on web pages by brute force 
 
 
 ```bash
-  git clone https://github.com/JoaoPedroMoreira02/BruteForce-Login-Page.git
+  git clone https://github.com/J0hnTh3Kn1ght/BruteForce-Login-Page.git
 ```
 
 ## [Help] Output
