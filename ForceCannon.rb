@@ -16,7 +16,7 @@ class ForceCannon
 
         OptionParser.new do |opt|
 
-            opt.banner = "Usage: ./app.rb [-t/--target] [-u/--username] [-P/--Password_list]"
+            opt.banner = "\nUsage: ./app.rb [-t/--target] [-u/--username] [-P/--Password_list] [-e/--error_msg]"
             opt.on("-t", "--target TARGET", "Target IP address or domain name") do |target|
 
                 @options[:target] = target
@@ -119,7 +119,7 @@ class ForceCannon
         @pass_data = inputs_names[1]
     end
 
-    def bruteforce_post_HTTP
+    def bruteforce_HTTP_POST
 
         print "\n[!] Select an operating mode\n\n"
         print "1 - Automatic Mode ---> This will pass the values of the ['name'] attributes of the HTML form automatically (Not 100% reliable)\n"
@@ -191,4 +191,4 @@ end
 
 force_cannon = ForceCannon.new
 options = force_cannon.parse_options
-force_cannon.bruteforce_post_HTTP
+force_cannon.bruteforce_HTTP_POST
