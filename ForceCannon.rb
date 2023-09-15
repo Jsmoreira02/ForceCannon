@@ -79,7 +79,7 @@ class ForceCannon
 
         inputs_names = []
         banner = File.read("logo_cannon.txt")
-        puts _banner
+        puts banner
 
         if response.to_i == 1
 
