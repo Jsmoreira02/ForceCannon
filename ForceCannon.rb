@@ -6,6 +6,22 @@ require 'optparse'
 require 'nokogiri'
 require 'uri'
 
+def logo
+
+    banner = "\n▒█▀▀▀ █▀▀█ █▀▀█ █▀▀ █▀▀ 　 ▒█▀▀█ █▀▀█ █▀▀▄ █▀▀▄ █▀▀█ █▀▀▄\n"
+    banner += "▒█▀▀▀ █░░█ █▄▄▀ █░░ █▀▀ 　 ▒█░░░ █▄▄█ █░░█ █░░█ █░░█ █░░█\n"
+    banner += "▒█░░░ ▀▀▀▀ ▀░▀▀ ▀▀▀ ▀▀▀ 　 ▒█▄▄█ ▀░░▀ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░▀\n\n"
+
+    banner += "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+    banner += "    ███████ ]▄▄▄▄▄▄▄▄ ---> rockyou.txt!\n"
+    banner += " ▂▄▅█████████▅▄▃▂\n"
+    banner += "[███████████████████].\n"
+    banner += "◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤.. ⠀⠀⠀⠀⠀⠀⠀\n"
+    banner += "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n\n"
+
+    return banner
+end
+
 class ForceCannon
 
     def initialize
@@ -78,8 +94,7 @@ class ForceCannon
     def operating_modes(response)
 
         inputs_names = []
-        banner = File.read("logo_cannon.txt")
-        puts banner
+        puts logo
 
         if response.to_i == 1
 
