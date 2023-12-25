@@ -1,4 +1,15 @@
-![Screenshot_20230727_083857](https://github.com/JoaoPedroMoreira02/BruteForce_Web/assets/103542430/f87863dc-2283-43f6-be8e-4985256b0bdc)
+<div align="center">
+
+  ![Screenshot_20230727_083857](https://github.com/JoaoPedroMoreira02/BruteForce_Web/assets/103542430/f87863dc-2283-43f6-be8e-4985256b0bdc)
+  
+  <img src="https://img.shields.io/badge/Language%20-Ruby-darkred.svg" style="max-width: 100%;">
+  <img src="https://img.shields.io/badge/Tool%20-BruteForce Login Page-darkblue.svg" style="max-width: 100%;">
+  <img src="https://img.shields.io/badge/OS%20-Linux-yellow.svg" style="max-width: 100%;">
+  <img src="https://img.shields.io/badge/Hacking and CTF tool%20-teste?style=flat-square" style="max-width: 100%;">  
+  <img src="https://img.shields.io/badge/Type%20-Script-black.svg" style="max-width: 100%;">
+  <img src="https://img.shields.io/badge/License%20-GPL 2.0-purple.svg" style="max-width: 100%;">
+
+</div>
 
 # Bruteforce Login Page [ForceCannon]
 
@@ -9,23 +20,19 @@ This is a script made in ruby to attack login forms on web pages by brute force 
   git clone https://github.com/Jsmoreira02/BruteForce-Login-Page.git
 ```
 
-## [Help] Output
+## Launch the Attack
 
-```bash
-Usage: ./app.rb [-t/--target] [-u/--username] [-P/--Password_list]
-    -t, --target TARGET              Target IP address or domain name
-    -u, --username USER_VALUE        Username value
-    -p, --password PASSWORD_VALUE    Password value
-    -U, --Users_list WORDLIST        Wordlist of Usernames
-    -P, --Password_list WORDLIST     Wordlist of Passwords
-    -e, --error_msg AUTH_ERROR_MSG   Authentication error message to check if the attack was successful
-    -h, --help                       show this help message and exit
+```./ForceCannon.rb -t http://test-vuln -u admin123 -P rockyou.txt -e The username or password provided is incorrect```
 
-```
+![ezgif com-video-to-gif-converter](https://github.com/Jsmoreira02/ForceCannon/assets/103542430/ec9b174f-6911-4413-b225-b8140aa5c500)
 
-```bash 
-./ForceCannon.rb -t http://test-vuln -u admin123 -P rockyou.txt -e The username or password provided is incorrect 
-```
+
+## Modes
+
+- **Automatic -->** It was built to be as efficient as possible, however it is not a 100% efficient method and if you are having problems finding the credentials during the attack, please consider using the manual mode.
+
+- **Manual -->** Just enter the username or password attribute and let it roll, this mode is 100% reliable.
+
 
 ## How it works (Detailed)
 
@@ -45,3 +52,7 @@ For this to occur correctly, the user must enter the identifier(value) of the `n
 
 
 ![Screenshot_20230728_074024](https://github.com/JoaoPedroMoreira02/BruteForce-Login-Page/assets/103542430/ac3f4494-c883-4c32-8433-58044b25b2c8)
+
+
+# Warning:    
+> I am not responsible for any illegal use or damage caused by this tool. It was written for fun, not evil and is intended to raise awareness about cybersecurity
