@@ -31,7 +31,7 @@ This is a script made in ruby to attack login forms on web pages by brute force 
 
 - **Automatic -->** It was built to be as efficient as possible, however it is not a 100% efficient method and if you are having problems finding the credentials during the attack, please consider using the manual mode.
 
-- **Manual -->** Just enter the username or password attribute and let it roll, this mode is 100% reliable.
+- **Manual -->** Just enter the username and password attribute and let it roll, this mode is 100% reliable.
 
 
 ## How it works (Detailed)
