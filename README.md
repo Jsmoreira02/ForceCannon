@@ -6,8 +6,7 @@
   <img src="https://img.shields.io/badge/Tool%20-BruteForce Login Page-darkblue.svg" style="max-width: 100%;">
   <img src="https://img.shields.io/badge/OS%20-Linux-yellow.svg" style="max-width: 100%;">
   <img src="https://img.shields.io/badge/Hacking and CTF tool%20-teste?style=flat-square" style="max-width: 100%;">  
-  <img src="https://img.shields.io/badge/Type%20-Script-black.svg" style="max-width: 100%;">
-  <img src="https://img.shields.io/badge/License%20-GPL 2.0-purple.svg" style="max-width: 100%;">
+  <img src="https://img.shields.io/badge/Type%20-Script-brown.svg" style="max-width: 100%;">
 
 </div>
 
